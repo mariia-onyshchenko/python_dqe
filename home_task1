@@ -1,0 +1,44 @@
+#task 1
+#importing library for randomizing
+import random 
+#here are used two functions: 
+#random.sample returns a particular length list of items chosen from the sequence
+#range() returns a sequence of numbers. as stop position is exclusive, it shall be = 1001 for 1000 to be included
+list_of_numbers = random.sample(range(0, 1001), 100) 
+
+#checking results with print(): list content and its length
+print(list_of_numbers)
+print(len(list_of_numbers))
+
+#task 2
+#2 loops are used here: inner one swaps neighbors, if the left one is > size-of-list times -1 (number of neighbor pairs)
+#outer loop repeats the inner one size-of-list -1 times to ensure the correct order (if the smallest number is at the end of the list, it will take exactly size-of-list -1 times to move it at 0-position
+
+for j in range(len(list_of_numbers)-1):
+  for i in range(len(list_of_numbers)-1):
+    if list_of_numbers[i+1] < list_of_numbers[i]:
+        list_of_numbers[i], list_of_numbers[i+1] = list_of_numbers[i+1], list_of_numbers[i]
+print(list_of_numbers)
+
+#task3
+#here is used a combination of for-loop and if-else conditions:
+#firstly i create variables to sum odd and even numbers separately, and also counters for each one for later division 
+#and then i omit division by zero error by checking the counters
+#for prettier results i use f-string
+odd = 0
+odd_counter = 0
+even = 0
+even_counter = 0
+for num in (list_of_numbers):
+  if num % 2 != 0:
+    odd = odd + num
+    odd_counter = odd_counter + 1
+  else:
+    even = even + num
+    even_counter = even_counter + 1
+if odd_counter == 0 and even_counter != 0:
+  print(f'avg even = {even/even_counter}, no odd numbers')
+elif even_counter == 0 and odd_counter != 0:
+  print(f'avg odd = {odd/odd_counter}, no even numbers')
+else:
+  print(f'avg even = {even/even_counter}, avg odd = {odd/odd_counter}')
