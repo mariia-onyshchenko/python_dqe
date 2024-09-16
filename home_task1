@@ -1,4 +1,6 @@
 #task 1
+#create list of 100 random numbers from 0 to 1000
+
 #importing library for randomizing
 import random 
 #here are used two functions: 
@@ -10,7 +12,13 @@ list_of_numbers = random.sample(range(0, 1001), 100)
 print(list_of_numbers)
 print(len(list_of_numbers))
 
+
+
+
+
 #task 2
+#sort list from min to max (without using sort())
+
 #2 loops are used here: inner one swaps neighbors, if the left one is > size-of-list times -1 (number of neighbor pairs)
 #outer loop repeats the inner one size-of-list -1 times to ensure the correct order (if the smallest number is at the end of the list, it will take exactly size-of-list -1 times to move it at 0-position
 
@@ -20,7 +28,15 @@ for j in range(len(list_of_numbers)-1):
         list_of_numbers[i], list_of_numbers[i+1] = list_of_numbers[i+1], list_of_numbers[i]
 print(list_of_numbers)
 
+
+
+
+
+
 #task3
+#calculate average for even and odd numbers
+#print both average result in console 
+
 #here is used a combination of for-loop and if-else conditions:
 #firstly i create variables to sum odd and even numbers separately, and also counters for each one for later division 
 #and then i omit division by zero error by checking the counters
