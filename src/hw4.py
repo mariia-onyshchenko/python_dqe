@@ -92,8 +92,7 @@ class Application:
                 print("\nPlease choose one of the following options:")
                 print("1. Add a News Record: This allows you to add a news item with city and description.")
                 print("2. Add a Private Ad: This allows you to add a private ad with expiration date and description.")
-                print(
-                    "3. Add a Custom Record: This allows you to create your own record with a custom type and fields.")
+                print(  "3. Add a Custom Record: This allows you to create your own record with a custom type and fields.")
                 print("4. Exit: Quit the application.")
 
                 choice = input("Enter your choice (1, 2, 3, or 4): ")
